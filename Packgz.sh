@@ -4,6 +4,7 @@ sleep 7s
 
 cd Lingelo
 cat packages.conf
+source packges.conf
 
 pacman -S --noconfirm ${ESSEN[@]}
 
