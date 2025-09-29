@@ -83,13 +83,14 @@ if [[ $bitch == y ]]; then
   echo "Make password for" $user
   read -s bpass
   useradd -m -g wheel -p $bpass $busr
+  clear
+  echo "run the extras.sh if you wanna go further"
+  su - $user
 
 fi
 
 if [[ $bitch == n ]]; then
   echo "Moving on..."
 fi
-
-su - $user
 
 bash extras.sh
