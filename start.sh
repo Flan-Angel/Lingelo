@@ -13,14 +13,13 @@ read bini
 pacman -Syu --noconfirm networkmanager git base-devel sudo
 
 #User creation
-echo "Create new user? (y/n)"
-read bitch
+read -p "Create new user? (y/N)" bitch
 
 if [[ $bitch == y ]]; then
   echo "Name your User"
   read busr
   echo "Make password for" $user
-  read bpass
+  read -s bpass
   useradd -m -g wheel -p $bpass $busr
 
 fi

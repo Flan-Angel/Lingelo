@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "You probably want packages for your system, so like your GUI and Security stuff"
 
 sleep 7s
@@ -9,8 +11,7 @@ source packges.conf
 pacman -S --noconfirm ${ESSEN[@]}
 
 #Security packages
-echo "Do you want a secure system? +170 MiB (y/N)"
-read sec
+read -p "Do you want a secure system? +170 MiB (y/N)" sec
 
 if [[ $sec == y ]]; then
   echo "Okay Pookie"
@@ -20,8 +21,7 @@ else
 fi
 
 #hardware care packages
-echo "Do you want the laptop mode tools and other stuff that keeps your hardware safe? +1 MiB (y/N)"
-read bhardw
+read -p "Do you want the laptop mode tools and other stuff that keeps your hardware safe? +1 MiB (y/N)" bhardw
 
 if [[ $bhardw == y ]]; then
   echo "HardwareChan: Thanks for keeping me safe onee-san uwu"
@@ -31,8 +31,7 @@ else
 fi
 
 #nwtwoek packages
-echo "Do you want Bluetooth and Networkmanager? +22 MiB (y/N)"
-read blut
+read -p "Do you want Bluetooth and Networkmanager? +22 MiB (y/N)" blut
 
 if [[ $blut == y ]]; then
   echo "Installing all the bluetooth and networkmanager shit"
@@ -42,8 +41,8 @@ else
 fi
 
 #sound packages
-echo "Do you want to have sound?  (y/N)"
-read bsnd
+read -p "Do you want to have sound?  (y/N)" bsnd
+
 
 if [[ $bsnd == y ]]; then
   echo "K Big Dawg"
@@ -53,8 +52,7 @@ else
 fi
 
 #Text related stuff
-echo "Do you want text related stuff? Like text editors and e-book viewers +173 MiB (y/N)"
-read btxt
+read -p "Do you want text related stuff? Like text editors and e-book viewers +173 MiB (y/N)" btxt
 
 if [[ $btxt == y ]]; then
   "Okay Nerd"
@@ -64,8 +62,7 @@ else
 fi
 
 #Desktop GUI
-echo "Do you want a GUI? Fuck it, do you want uhhh four of them? +122 MiB (y/N)"
-read bgui
+read -p "Do you want a GUI? Fuck it, do you want uhhh four of them? +122 MiB (y/N)" bgui
 
 if [[ $bgui == y ]]; then
   echo "Its all very minimal and we dont have gnome :3"
@@ -75,8 +72,7 @@ else
 fi
 
 #Window manager essentials
-echo "You probably want these if you use a window manager +104 MiB (y/N)"
-read bap
+read -p "You probably want these if you use a window manager +104 MiB (y/N)" bap
 
 if [[ $bap == y ]]; then
   echo "Doing that"
@@ -86,8 +82,8 @@ else
 fi
 
 #Media stuff
-echo "Do you want media viewers/editors + fonts? +622 MiB (y/N)"
-read bmd
+read -p "Do you want media viewers/editors + fonts? +622 MiB (y/N)" bmd
+
 
 if [[ $bmd == y ]]; then
   echo "Gimp and shi..."
@@ -97,8 +93,7 @@ else
 fi
 
 ##cli stuff
-echo "Cool cli stuff +40 MiB (y/N)"
-read bcli
+read -p "Cool cli stuff +40 MiB (y/N)" bcli
 
 if [[ $bcli == y ]]; then
   echo "Fetch, cbonsai and cmatrix... Plus some other stuff"
@@ -108,8 +103,7 @@ else
 fi
 
 #bloat stuff
-echo "We got some cool extras but they are pretty heavy :( do you want them +534 MiB (y/N)"
-read bblo
+read -p "We got some cool extras but they are pretty heavy :( do you want them +534 MiB (y/N)" bblo
 
 if [[ $bblo == y ]]; then
   echo "Mmm yummy disc space... shame it's all mine now"
@@ -120,5 +114,17 @@ fi
 
 clear
 echo "Yaayyyy we are done with your package installation"
+sleep 1s
 echo "Do you wanna configure it with me here? Or are you a big boy that does his own configuration"
+sleep 1s
 echo "Only daemons and services, we dont do desktop configs in this script"
+sleep 1s
+read -p "(Y/n)" bconf
+
+
+if [[ $bconf == n ]]; then
+  echo "Okay big boy"
+  #do other script
+else
+  echo "It's Configging time"
+  bash configuration.sh
