@@ -93,4 +93,6 @@ if [[ $bitch == n ]]; then
   echo "Moving on..."
 fi
 
+#https://github.com/Flan-Angel/Lingelo.git
+
 bash extras.sh
