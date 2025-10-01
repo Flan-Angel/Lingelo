@@ -84,7 +84,9 @@ if [[ $bitch == y ]]; then
   read -s bpass
   useradd -m -g wheel -p $bpass $busr
   clear
-  echo "run the extras.sh if you wanna go further"
+  echo "Editing sudoers so wheel group users have sudo privilage"
+  sed -i 's/# %wheel ALL=(ALL:ALL) ALL/  %wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+  echo "Logging into non root user"
   su - $user
 
 fi
