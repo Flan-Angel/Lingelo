@@ -16,4 +16,13 @@ if [[ $lzvm == y ]]; then
   rm -rf ~/.config/nvim/.git
 fi
 
+read -p "Do you want yay? (AUR helper) (y/N)" byay
+if [[ $byay == y ]]; then
+  sudo pacman -S --needed --noconfirm base-devel git
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  yay --version
+fi
+
 bash end.sh
