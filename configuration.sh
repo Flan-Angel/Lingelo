@@ -95,6 +95,14 @@ if [[ $bitch == n ]]; then
   echo "Moving on..."
 fi
 
-#https://github.com/Flan-Angel/Lingelo.git
+read -p "Do you want extra installs? like Joplin cli and lazy-vim (y/N)" bxtra
 
-bash extras.sh
+if [[ $bxtra == y ]]; then
+  bash extras.sh
+
+else
+  echo "Your loss big dawg"
+  bash end.sh
+
+fi
+#https://github.com/Flan-Angel/Lingelo.git
