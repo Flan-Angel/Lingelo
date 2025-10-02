@@ -2,7 +2,7 @@
 clear
 echo "You probably want packages for your system, so like your GUI and Security stuff"
 
-sleep 7s
+sleep 2s
 
 cd Lingelo
 cat packages.conf
@@ -34,7 +34,7 @@ if [[ $bhardw == y ]]; then
 else
   clear
   echo "HardwareChan: Meanie :( Fuck you"
-  sleep 7s
+  sleep 2s
 fi
 
 #nwtwoek packages
@@ -48,7 +48,7 @@ if [[ $blut == y ]]; then
 else
   clear
   echo "Okay :3"
-  sleep 7s
+  sleep 2s
 fi
 
 #sound packages
@@ -62,7 +62,7 @@ if [[ $bsnd == y ]]; then
 else
   clear
   echo ">_<"
-  sleep 7s
+  sleep 2s
 fi
 
 #Text related stuff
@@ -76,7 +76,7 @@ if [[ $btxt == y ]]; then
 else
   clear
   echo "Mmmmhmm."
-  sleep 7s
+  sleep 2s
 fi
 
 #Desktop GUI
@@ -90,7 +90,7 @@ if [[ $bgui == y ]]; then
 else
   clear
   echo "This mf..."
-  sleep 7s
+  sleep 2s
 fi
 
 #Window manager essentials
@@ -116,7 +116,7 @@ if [[ $bmd == y ]]; then
 else
   clear
   echo "Okay dawg"
-  sleep 4s
+  sleep 2s
 fi
 
 ##cli stuff
@@ -141,7 +141,7 @@ if [[ $bblo == y ]]; then
 else
   clear
   echo "Coolsies :3"
-  sleep 4s
+  sleep 2s
 fi
 
 clear
@@ -157,6 +157,7 @@ if [[ $bconf == n ]]; then
   echo "Okay big boy"
   #do other script
 else
+  cd ~/Lingelo
   echo "It's Configging time"
   bash configuration.sh
 fi

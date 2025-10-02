@@ -10,5 +10,5 @@ echo "WELCOME TO LINGELO! The all new, very specific arch auto configuration sys
 #echo "Cloning into Lingelo..."
 #cd /home/$bitch
 #git clone https://github.com/Flan-Angel/Lingelo.git
-
-bash Lingelo/Packgz.sh
+cd Lingelo
+bash Packgz.sh

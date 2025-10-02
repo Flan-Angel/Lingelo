@@ -27,5 +27,5 @@ if [[ $byay == y ]]; then
   makepkg -si
   yay --version
 fi
-
+cd ~/Lingelo
 bash end.sh

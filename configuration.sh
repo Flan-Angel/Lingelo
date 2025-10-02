@@ -93,14 +93,14 @@ read -p "Create new user? Usually you dont use the root account (y/N)" bitch
 if [[ $bitch == y ]]; then
   echo "Name your User"
   read busr
-  echo "Make password for" $user
+  echo "Make password for" $busr
   read -s bpass
   useradd -m -g wheel -p $bpass $busr
   clear
   echo "Editing sudoers so wheel group users have sudo privilage"
   sed -i 's/# %wheel ALL=(ALL:ALL) ALL/  %wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
   echo "Logging into non root user"
-  su - $user
+  su - $busr
 else
   echo "Moving on..."
 fi
@@ -109,11 +109,12 @@ clear
 read -p "Do you want extra installs? like Joplin cli and lazy-vim (y/N)" bxtra
 
 if [[ $bxtra == y ]]; then
+  cd ~/Lingelo
   bash extras.sh
 
 else
   echo "Your loss big dawg"
-  bash end.sh
+  sudo bash /root/Lingelo/end.sh
 
 fi
 #https://github.com/Flan-Angel/Lingelo.git
