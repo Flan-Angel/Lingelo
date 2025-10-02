@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 read -p "Do you want to install joplin cli? (y/N)" jpcl
 if [[ $jpcl == y ]]; then
 
@@ -9,6 +10,7 @@ if [[ $jpcl == y ]]; then
   sudo ln -s ~/.joplin-bin/bin/joplin /usr/local/bin/joplin
 fi
 
+clear
 read -p "Do you want lazy-vim? I used it to write this script :3 (y/N) " lzvm
 if [[ $lzvm == y ]]; then
   sudo pacman -S --noconfirm ttf-jetbrains-mono-nerd neovim tree-sitter curl fzf ripgrep fd kitty
@@ -16,6 +18,7 @@ if [[ $lzvm == y ]]; then
   rm -rf ~/.config/nvim/.git
 fi
 
+clear
 read -p "Do you want yay? (AUR helper) (y/N)" byay
 if [[ $byay == y ]]; then
   sudo pacman -S --needed --noconfirm base-devel git
